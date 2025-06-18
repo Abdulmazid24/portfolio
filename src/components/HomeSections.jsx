@@ -1,5 +1,4 @@
 import { motion } from 'framer-motion';
-import { Button } from '@/components/ui/button';
 import { FaSearch, FaYoutube, FaGoogle, FaGlobe } from 'react-icons/fa';
 import { Download } from 'lucide-react';
 
@@ -88,10 +87,16 @@ export default function HomeSections() {
           I don’t just follow trends—I create them, while staying true to your brand’s identity.
           Let’s turn your followers into loyal fans and convert your goals into real success.
         </p>
-        <Button className='mt-6 group relative overflow-hidden px-6 py-3 bg-gradient-to-r from-blue-600 to-indigo-600 text-white rounded-lg shadow-lg flex items-center gap-2 transition-all duration-300 hover:scale-105'>
+
+        {/* ✅ Working Download Button */}
+        <a
+          href='/cv.pdf'
+          download='My_CV.pdf'
+          className='mt-6 inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-blue-600 to-indigo-600 text-white rounded-lg shadow-lg transition-all duration-300 hover:scale-105 group'
+        >
           <Download className='w-5 h-5 group-hover:animate-bounce' />
-          <span className='z-10'>Download CV</span>
-        </Button>
+          <span>Download CV</span>
+        </a>
       </motion.section>
 
       {/* Projects Section */}
@@ -123,10 +128,13 @@ export default function HomeSections() {
           >
             <h3 className='text-2xl font-semibold mb-2'>{project.title}</h3>
             <p className='text-gray-700 mb-2'>{project.content}</p>
-            <Button variant='outline'>Read More</Button>
+            <button className='mt-2 px-4 py-2 rounded border text-sm hover:bg-gray-100 transition'>
+              Read More
+            </button>
           </motion.div>
         ))}
       </section>
     </div>
   );
 }
+//       <textarea
